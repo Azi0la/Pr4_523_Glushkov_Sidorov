@@ -24,5 +24,19 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             InitializeComponent();
         }
+
+        private void Problem1Btn_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Problem2Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Problem3Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

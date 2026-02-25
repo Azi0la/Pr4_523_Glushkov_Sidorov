@@ -10,6 +10,13 @@
       >
 
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="Problem1Btn" Content="Пример 1" Click="Problem1Btn_Click"
+                    Width="150" Height="50" />
+            <Button x:Name="Problem2Btn" Content="Пример 2" Click="Problem2Btn_Click"
+        Width="150" Height="50" Margin="0 30"/>
+            <Button x:Name="Problem3Btn" Content="Пример 3" Click="Problem3Btn_Click"
+        Width="150" Height="50"/>
+        </StackPanel>
     </Grid>
 </Page>
