@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Pr4_523_Glushkov_Sidorov
+namespace Pr4_523_Glushkov_Sidorov.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    /// лсегоууу
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
-            MainFrame.NavigationService.Navigate(new Pages.MainPage());
         }
     }
 }

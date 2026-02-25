@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pr4_523_Glushkov_Sidorov"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Практическая работа 4 Глушков А. О. Сидоров Д. А." Height="450" Width="800">
     <Grid>
-        
+        <Frame x:Name="MainFrame"/>
     </Grid>
 </Window>
