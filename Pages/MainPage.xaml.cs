@@ -27,16 +27,17 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void Problem1Btn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Problem1());
         }
 
         private void Problem2Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Problem2());
         }
 
         private void Problem3Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Problem3());
         }
     }
 }
