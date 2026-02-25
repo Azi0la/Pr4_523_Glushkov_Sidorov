@@ -18,6 +18,7 @@ namespace Pr4_523_Glushkov_Sidorov
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    /// лсегоууу
     public partial class MainWindow : Window
     {
         public MainWindow()
