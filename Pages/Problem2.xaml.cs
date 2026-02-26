@@ -20,6 +20,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
     /// </summary>
     public partial class Problem2 : Page
     {
+        public static string function;
         public Problem2()
         {
             InitializeComponent();
@@ -27,12 +28,25 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            RadioButton rb = (RadioButton)sender; // явное преобразование object в RadioButton
+            function = rb.Content.ToString();
         }
 
         private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!String.IsNullOrEmpty(xTB.Text) & !String.IsNullOrEmpty(mTB.Text))
+            {
+                double x;
+                double y;
+                if (Double.TryParse(xTB.Text, out x) && Double.TryParse(mTB.Text, out y))
+                {
+                    
+                    if(x > y)
+                    {
 
+                    }
+                }
+            }
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)

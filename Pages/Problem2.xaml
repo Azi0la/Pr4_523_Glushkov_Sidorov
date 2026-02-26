@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Problem2"
       Background="OliveDrab">
-
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -35,7 +35,7 @@
             <Label Content="m" FontSize="25" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBox x:Name="mTB" Height="30" Width="120" Grid.Row="1" Grid.Column="1"/>
             <StackPanel Grid.Row="2" Grid.Column="1">
-                <RadioButton Content="sh(x)" FontSize="25" Checked="RadioButton_Checked"/>
+                <RadioButton Content="sh(x)" FontSize="25" Checked="RadioButton_Checked" IsChecked="True"/>
                 <RadioButton Content="x^2" FontSize="25" Checked="RadioButton_Checked"/>
                 <RadioButton Content="e^x" FontSize="25" Checked="RadioButton_Checked"/>
             </StackPanel>
