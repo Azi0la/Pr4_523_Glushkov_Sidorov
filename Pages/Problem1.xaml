@@ -10,6 +10,24 @@
       Background="CadetBlue">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
         
+        <Grid Grid.Row="1" Width="400" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="X" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Height="30" Width="120" Grid.Column="1"/>
+        </Grid>
     </Grid>
 </Page>
