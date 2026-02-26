@@ -25,9 +25,23 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
             InitializeComponent();
         }
 
-        private void BackBtn1_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainPage());
+        }
+
+        private void CalculateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(xTB.Text) & !String.IsNullOrEmpty(yTB.Text) & !String.IsNullOrEmpty(zTB.Text))
+            {
+                double x;
+                double y;
+                double z;
+                if(Double.TryParse(xTB.Text, out x) && Double.TryParse(yTB.Text, out y) && Double.TryParse(zTB.Text, out z))
+                {
+
+                }
+            }
         }
     }
 }
