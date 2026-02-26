@@ -24,5 +24,10 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             InitializeComponent();
         }
+
+        private void BackBtn3_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainPage());
+        }
     }
 }

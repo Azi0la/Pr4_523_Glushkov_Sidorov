@@ -24,5 +24,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             InitializeComponent();
         }
+
+
     }
 }
