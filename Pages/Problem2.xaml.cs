@@ -34,7 +34,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(xTB.Text) & !String.IsNullOrEmpty(mTB.Text))
+            if (!String.IsNullOrEmpty(xTB.Text) && !String.IsNullOrEmpty(mTB.Text))
             {
                 double x;
                 double y;
@@ -88,9 +88,9 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            xTB.Text = "";
-            mTB.Text = "";
-            AnsTB.Text = "";
+            xTB.Clear();
+            mTB.Clear();
+            AnsTB.Clear();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
