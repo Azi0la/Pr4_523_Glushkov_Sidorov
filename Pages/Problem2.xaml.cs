@@ -24,5 +24,25 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CalculateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
