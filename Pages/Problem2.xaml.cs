@@ -28,7 +28,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            RadioButton rb = (RadioButton)sender; // явное преобразование object в RadioButton
+            RadioButton rb = (RadioButton)sender;
             function = rb.Content.ToString();
         }
 
@@ -40,23 +40,65 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
                 double y;
                 if (Double.TryParse(xTB.Text, out x) && Double.TryParse(mTB.Text, out y))
                 {
-                    
-                    if(x > y)
-                    {
 
+                    double fx;
+                    switch (function)
+                    {
+                        case "sh(x)":
+                            fx = Math.Sinh(x); 
+                            break;
+                        case "x^2":
+                            fx = Math.Pow(x, 2);
+                            break;
+                        case "e^x":
+                            fx = Math.Exp(x);
+                            break;
+                        default:
+                            fx = Math.Sinh(x);
+                            break;
                     }
+
+                    double res;
+                    if (x > y)
+                    {
+                        res = Math.Pow(fx - y, 3) + Math.Atan(fx);
+                    }
+                    else if (x < y) 
+                    {
+                        res = Math.Pow(y - fx, 3) + Math.Atan(fx);
+                    }
+                    else
+                    {
+                        res = Math.Pow(y + fx, 3) + 0.5;
+                    }
+
+                    AnsTB.Text = res.ToString();
+
                 }
+                else
+                {
+                    MessageBox.Show("Введено не число");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введены пустые значения");
             }
         }
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            xTB.Text = "";
+            mTB.Text = "";
+            AnsTB.Text = "";
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (NavigationService.CanGoBack) 
+            {
+                NavigationService.GoBack();
+            }
         }
     }
 }
