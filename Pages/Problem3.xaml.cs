@@ -32,14 +32,21 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
 
         private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(XoTB.Text) && !String.IsNullOrEmpty(XkTB.Text) && !String.IsNullOrEmpty(DxTB.Text))
+            AnsTB.Clear();
+            if (!String.IsNullOrEmpty(XoTB.Text) && !String.IsNullOrEmpty(XkTB.Text) 
+                && !String.IsNullOrEmpty(DxTB.Text) && !String.IsNullOrEmpty(aTB.Text)
+                && !String.IsNullOrEmpty(bTB.Text))
             {
-                double xo, xk, dx, result;
-                if (Double.TryParse(XoTB.Text, out xo) && Double.TryParse(XkTB.Text, out xk) && Double.TryParse(DxTB.Text, out dx))
+                double xo, xk, dx, a, b, result;
+                if (Double.TryParse(XoTB.Text, out xo) && Double.TryParse(XkTB.Text, out xk) 
+                    && Double.TryParse(DxTB.Text, out dx) && Double.TryParse(aTB.Text, out a)
+                    && Double.TryParse(bTB.Text, out b))
                 {
                     for (double i = xo; i <= xk; i += dx)
                     {
-                        
+                        result = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
+                        AnsTB.Text += result;
+                        AnsTB.Text += "\n";
                     }
                    
                 }
@@ -58,6 +65,9 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             XoTB.Clear();
             XkTB.Clear();
+            DxTB.Clear();
+            aTB.Clear();
+            bTB.Clear();
             AnsTB.Clear();
         }
     }
