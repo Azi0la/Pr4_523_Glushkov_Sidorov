@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pr4_523_Glushkov_Sidorov.Pages" xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="Problem3"
-      Background="Salmon">
+      Background="Black">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,24 +29,24 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Label Content="Xo" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="XoTB" Height="30" Width="120" Grid.Column="1"/>
-            <Label Content="Xk" FontSize="20"
+            <Label Content="Xo" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="XoTB" Grid.Column="1"/>
+            <Label Content="Xk" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
-            <TextBox x:Name="XkTB"  Height="30" Width="120" Grid.Column="1" Grid.Row="1"/>
-            <Label Content="dx" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
-            <TextBox x:Name="DxTB" Height="30" Width="120" Grid.Column="1" Grid.Row="2"/>
-            <Label Content="a" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
-            <TextBox x:Name="aTB" Height="30" Width="120" Grid.Column="1" Grid.Row="3"/>
+            <TextBox x:Name="XkTB" Grid.Column="1" Grid.Row="1"/>
+            <Label Content="dx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
+            <TextBox x:Name="DxTB" Grid.Column="1" Grid.Row="2"/>
+            <Label Content="a" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
+            <TextBox x:Name="aTB" Grid.Column="1" Grid.Row="3"/>
             <Label Content="b" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4"/>
-            <TextBox x:Name="bTB" Height="30" Width="120" Grid.Column="1" Grid.Row="4"/>
-            <Label Content="Ответ:" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="5"/>
-            <TextBox x:Name="AnsTB" Height="100" Width="120" Grid.Column="1" Grid.Row="5"/>
-            <Button x:Name="CalculateBtn" Height="40" Width="100" Content="Вычислить" FontSize="18"
+            <TextBox x:Name="bTB" Grid.Column="1" Grid.Row="4"/>
+            <Label Content="Ответ:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="5"/>
+            <TextBox x:Name="AnsTB" Grid.Column="1" Grid.Row="5" VerticalAlignment="Top" FontSize="12" Height="80" Margin="0 10"/>
+            <Button x:Name="CalculateBtn" Content="Вычислить"
                     HorizontalAlignment="Center" Grid.Column="2" Grid.RowSpan="2" Click="CalculateBtn_Click"/>
-            <Button x:Name="ClearBtn" Height="40" Width="100" Content="Очистить" FontSize="18"  
+            <Button x:Name="ClearBtn" Content="Очистить"  
                     HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2"   Click="ClearBtn_Click"/>
-            <Button x:Name="BackBtn" Height="40" Width="100" Content="Назад" FontSize="18" 
+            <Button x:Name="BackBtn" Content="Назад"
                     HorizontalAlignment="Center" Grid.Column="2" Grid.Row="5" Click="BackBtn_Click"/>
         </Grid>
         <WindowsFormsHost HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Width="350" Height="250" Margin="20">

@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pr4_523_Glushkov_Sidorov.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="Problem2"
-      Background="OliveDrab">
+      Background="Black">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -30,23 +30,23 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Content="x" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="xTB" Height="30" Width="120" Grid.Column="1"/>
-            <Label Content="m" FontSize="25" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="mTB" Height="30" Width="120" Grid.Row="1" Grid.Column="1"/>
+            <Label Content="x" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="xTB" Grid.Column="1"/>
+            <Label Content="m" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="mTB" Grid.Row="1" Grid.Column="1"/>
             <StackPanel Grid.Row="2" Grid.Column="1">
-                <RadioButton Content="sh(x)" FontSize="25" Checked="RadioButton_Checked" IsChecked="True"/>
-                <RadioButton Content="x^2" FontSize="25" Checked="RadioButton_Checked"/>
-                <RadioButton Content="e^x" FontSize="25" Checked="RadioButton_Checked"/>
+                <RadioButton Content="sh(x)" Checked="RadioButton_Checked" IsChecked="True"/>
+                <RadioButton Content="x^2" Checked="RadioButton_Checked"/>
+                <RadioButton Content="e^x" Checked="RadioButton_Checked"/>
             </StackPanel>
-            <Button x:Name="CalculateBtn" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Content="Вычислить" FontSize="18"   Height="40" Width="100" Click="CalculateBtn_Click"/>
-            <Button x:Name="ClearBtn" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                    Content="Очистить" FontSize="18" Height="40" Width="100" Click="ClearBtn_Click"/>
-            <Label Content="Ответ:" FontSize="25" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="AnsTB" Height="30" Width="120" Grid.Column="1" Grid.Row="3"/>
-            <Button x:Name="BackBtn" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-        Content="Назад" FontSize="18" Height="40" Width="100" Click="BackBtn_Click"/>
+            <Button x:Name="CalculateBtn" Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalAlignment="Center"
+                    Content="Вычислить"  Click="CalculateBtn_Click"/>
+            <Button x:Name="ClearBtn" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"
+                    Content="Очистить" Click="ClearBtn_Click"/>
+            <Label Content="Ответ:" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="AnsTB" Grid.Column="1" Grid.Row="3"/>
+            <Button x:Name="BackBtn" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center"
+        Content="Назад"  Click="BackBtn_Click"/>
         </Grid>
         
     </Grid>

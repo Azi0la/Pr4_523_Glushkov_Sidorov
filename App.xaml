@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Pr4_523_Glushkov_Sidorov"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/Dictionary.xaml"/>
     </Application.Resources>
 </Application>
