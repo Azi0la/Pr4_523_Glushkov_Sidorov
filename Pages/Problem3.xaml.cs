@@ -26,9 +26,9 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
         {
             InitializeComponent();
             Chart.ChartAreas.Add(new ChartArea("Main"));
-            var currentSeries = new Series("Res")
+            Series currentSeries = new Series("Res")
             {
-                IsValueShownAsLabel = true
+                IsValueShownAsLabel = false
             };
             Chart.Series.Add(currentSeries);
         }
@@ -51,28 +51,40 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
                     && Double.TryParse(DxTB.Text, out dx) && Double.TryParse(aTB.Text, out a)
                     && Double.TryParse(bTB.Text, out b))
                 {
-
-                    Series series = Chart.Series.FirstOrDefault();
-                    series.Points.Clear();
-                    for (double i = xo; i <= xk; i += dx)
+                    if (dx != 0 && Math.Abs(dx) < Math.Abs(xo - xk))
                     {
-                        result = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
-                        AnsTB.Text += result;
-                        AnsTB.Text += "\n";
+                        if (xo > xk)
+                        {
+                            double t = xo;
+                            xo = xk;
+                            xk = t;
+                        }
 
-                        series.Points.AddXY(i.ToString(), result);
+                        Series series = Chart.Series.FirstOrDefault();
+                        series.ChartType = SeriesChartType.Spline;
+                        series.Points.Clear();
+                        for (double i = xo; i <= xk; i += dx)
+                        {
+                            result = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
+                            AnsTB.Text += result;
+                            AnsTB.Text += "\n";
 
+                            series.Points.AddXY(i, result);
+                        }
                     }
-                   
+                    else
+                    {
+                        MessageBox.Show("Введен неправлиьный шаг (dx)!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Введено не число");
+                    MessageBox.Show("Введено не число!");
                 }
             }
             else
             {
-                MessageBox.Show("Введены пустые значения");
+                MessageBox.Show("Введены пустые значения!");
             }
         }
 
