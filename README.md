@@ -80,6 +80,7 @@ Pr4_523_Glushkov_Sidorov/
 │ └─ Problem3.jpg
 ├─ MainWindow.xaml
 ├─ MainWindow.xaml.cs
+├─ Dictionary.xaml
 └─ README.md
 ```
 
