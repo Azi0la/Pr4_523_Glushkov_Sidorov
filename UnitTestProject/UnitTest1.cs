@@ -32,20 +32,6 @@ namespace UnitTestProject
             Assert.AreEqual(res_test, res_act, res_test * 0.05);
         }
 
-
-        
-        [TestMethod]
-        public void TestProblem3()
-        {
-            var problem3 = new Problem3();
-
-            int res = 2 + 2;
-            Assert.AreEqual(res, 4);
-            Assert.AreNotEqual(res, 5);
-            Assert.IsFalse(res > 5);
-            Assert.IsTrue(res < 5);
-        }
-
         [TestMethod]
         public void TestMethodProblem2()
         {
@@ -81,6 +67,13 @@ namespace UnitTestProject
             Assert.AreNotEqual(test_res, 1.36);
             Assert.IsFalse(test_res > 1.36);
             Assert.IsTrue(test_res < 1.36);
+        }
+
+        [TestMethod]
+        public void TestProblem3()
+        {
+            var problem3 = new Problem3();
+
         }
     }
 }
