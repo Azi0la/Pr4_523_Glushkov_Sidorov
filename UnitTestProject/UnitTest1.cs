@@ -63,10 +63,9 @@ namespace UnitTestProject
             else
                 test_res = Math.Pow(y + fx, 3) + 0.5;
 
-            Assert.AreEqual(test_res, 1.35371373880349);
-            Assert.AreNotEqual(test_res, 1.36);
-            Assert.IsFalse(test_res > 1.36);
-            Assert.IsTrue(test_res < 1.36);
+            double act_res = problem2.Calcus2(x, y, function);
+
+            Assert.AreEqual(test_res, act_res, test_res * 0.05);
         }
 
         [TestMethod]

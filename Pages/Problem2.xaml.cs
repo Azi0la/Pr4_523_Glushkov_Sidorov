@@ -32,6 +32,41 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
             function = rb.Content.ToString();
         }
 
+        public double Calcus2(double x, double y, string func)
+        {
+            double fx;
+            switch (func)
+            {
+                case "sh(x)":
+                    fx = Math.Sinh(x);
+                    break;
+                case "x^2":
+                    fx = Math.Pow(x, 2);
+                    break;
+                case "e^x":
+                    fx = Math.Exp(x);
+                    break;
+                default:
+                    fx = Math.Sinh(x);
+                    break;
+            }
+
+            double res;
+            if (x > y)
+            {
+                res = Math.Pow(fx - y, 3) + Math.Atan(fx);
+            }
+            else if (x < y)
+            {
+                res = Math.Pow(y - fx, 3) + Math.Atan(fx);
+            }
+            else
+            {
+                res = Math.Pow(y + fx, 3) + 0.5;
+            }
+
+            return res;
+        }
         private void CalculateBtn_Click(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrEmpty(xTB.Text) && !String.IsNullOrEmpty(mTB.Text))
@@ -41,37 +76,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
                 if (Double.TryParse(xTB.Text, out x) && Double.TryParse(mTB.Text, out y))
                 {
 
-                    double fx;
-                    switch (function)
-                    {
-                        case "sh(x)":
-                            fx = Math.Sinh(x); 
-                            break;
-                        case "x^2":
-                            fx = Math.Pow(x, 2);
-                            break;
-                        case "e^x":
-                            fx = Math.Exp(x);
-                            break;
-                        default:
-                            fx = Math.Sinh(x);
-                            break;
-                    }
-
-                    double res;
-                    if (x > y)
-                    {
-                        res = Math.Pow(fx - y, 3) + Math.Atan(fx);
-                    }
-                    else if (x < y) 
-                    {
-                        res = Math.Pow(y - fx, 3) + Math.Atan(fx);
-                    }
-                    else
-                    {
-                        res = Math.Pow(y + fx, 3) + 0.5;
-                    }
-
+                    double res = Calcus2(x, y, function);
                     AnsTB.Text = res.ToString();
 
                 }
