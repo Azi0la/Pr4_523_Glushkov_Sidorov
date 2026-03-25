@@ -42,11 +42,7 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
                 double z;
                 if(Double.TryParse(xTB.Text, out x) && Double.TryParse(yTB.Text, out y) && Double.TryParse(zTB.Text, out z))
                 {
-                    double a = Math.Abs(Math.Cos(x) - Math.Cos(y));
-                    double b = (1+ 2*Math.Pow(Math.Sin(y), 2));
-                    double c = Math.Pow(a, b);
-                    double d = (1 + z + (Math.Pow(z, 2)/2) + (Math.Pow(z, 3) / 3) + (Math.Pow(z, 4) / 4));
-                    double answ = c * d;
+                    double answ = Calculate1(x, y, z);
                     answTB.Text = answ.ToString();
                 }
                 else
@@ -67,5 +63,16 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
             zTB.Text = "";
             answTB.Text = "";
         }
+
+        public double Calculate1(double x, double y, double z)
+        {
+            double a = Math.Abs(Math.Cos(x) - Math.Cos(y));
+            double b = (1 + 2 * Math.Pow(Math.Sin(y), 2));
+            double c = Math.Pow(a, b);
+            double d = (1 + z + (Math.Pow(z, 2) / 2) + (Math.Pow(z, 3) / 3) + (Math.Pow(z, 4) / 4));
+            double answ = c * d;
+            return answ;
+        }
+
     }
 }
