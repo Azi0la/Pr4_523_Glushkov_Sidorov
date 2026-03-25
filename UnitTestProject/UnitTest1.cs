@@ -19,9 +19,8 @@ namespace UnitTestProject
             Assert.IsTrue(res < 5);
         }
 
-
         [TestMethod]
-        public void TestProblem1()
+        public void TestMethodProblem1()
         {
             var problem1 = new Problem1();
             double x = Math.PI;
@@ -31,6 +30,15 @@ namespace UnitTestProject
                 * (1 + z + (Math.Pow(z, 2) / 2) + (Math.Pow(z, 3) / 3) + (Math.Pow(z, 4) / 4));
             double res_act = problem1.Calculate1(x, y, z);
             Assert.AreEqual(res_test, res_act, res_test * 0.05);
+        }
+
+
+        
+        [TestMethod]
+        public void TestProblem3()
+        {
+            var problem3 = new Problem3();
+
         }
     }
 }
