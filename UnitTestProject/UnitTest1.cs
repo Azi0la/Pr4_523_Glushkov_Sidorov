@@ -19,6 +19,7 @@ namespace UnitTestProject
             Assert.IsTrue(res < 5);
         }
 
+
         [TestMethod]
         public void TestProblem1()
         {
@@ -26,7 +27,7 @@ namespace UnitTestProject
             double x = Math.PI;
             double y = Math.PI * 2;
             double z = 0;
-            double res_test = Math.Pow(Math.Abs(Math.Cos(x) - Math.Cos(y)), (1 + 2 * Math.Sin(y))) 
+            double res_test = Math.Pow(Math.Abs(Math.Cos(x) - Math.Cos(y)), (1 + 2 * Math.Sin(y)))
                 * (1 + z + (Math.Pow(z, 2) / 2) + (Math.Pow(z, 3) / 3) + (Math.Pow(z, 4) / 4));
             double res_act = problem1.Calculate1(x, y, z);
             Assert.AreEqual(res_test, res_act, res_test * 0.05);
