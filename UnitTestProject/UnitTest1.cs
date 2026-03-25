@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Microsoft.Win32;
 using Pr4_523_Glushkov_Sidorov;
 using Pr4_523_Glushkov_Sidorov.Pages;
-using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
 
 namespace UnitTestProject
 {
@@ -69,9 +70,46 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void TestProblem3()
+        public void TestMethodProblem3()
         {
             var problem3 = new Problem3();
+            double xo = 0;
+            double xk = 3.8;
+            double dx = 0.2;
+            double a = 6;
+            double b = 7;
+                        
+            if (xo > xk)
+            {
+                double t = xo;
+                xo = xk;
+                xk = t;
+            }
+
+            double test_res;
+            List<double> test_results = new List<double>();
+
+            for (double i = xo; i <= xk; i += dx)
+            {
+                test_res = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
+                test_results.Add(test_res);
+            }
+
+            var act_results = problem3.Calculate3(xo, xk, dx, a, b);
+
+            Assert.AreEqual(test_results.Count, act_results.Count);
+
+            for(int i = 0; i < test_results.Count; i++)
+            {
+                Assert.AreEqual(test_results[i], act_results[i], test_results[i] * 0.05);
+            }
+
+
+
+
+
+
+
 
         }
     }

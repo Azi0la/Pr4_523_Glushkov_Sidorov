@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -53,24 +54,22 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
                 {
                     if (dx != 0 && Math.Abs(dx) < Math.Abs(xo - xk))
                     {
-                        if (xo > xk)
-                        {
-                            double t = xo;
-                            xo = xk;
-                            xk = t;
-                        }
-
+                        
                         Series series = Chart.Series.FirstOrDefault();
                         series.ChartType = SeriesChartType.Spline;
                         series.Points.Clear();
-                        for (double i = xo; i <= xk; i += dx)
+                        
+                        List<double> results = Calculate3(xo, xk, dx, a, b);
+
+                        for (int i = 0; i < results.Count; i++)
                         {
-                            result = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
+                            result = results[i];
                             AnsTB.Text += result;
                             AnsTB.Text += "\n";
 
                             series.Points.AddXY(i, result);
                         }
+                        
                     }
                     else
                     {
@@ -98,6 +97,24 @@ namespace Pr4_523_Glushkov_Sidorov.Pages
             AnsTB.Clear();
         }
 
+        public List<double> Calculate3 (double xo, double xk, double dx, double a, double b)
+        {
+            double result;
+            List<double> results = new List<double>();
+            if (xo > xk)
+            {
+                double t = xo;
+                xo = xk;
+                xk = t;
+            }
+
+            for (double i = xo; i <= xk; i += dx)
+            {
+                result = a * Math.Pow(i, 3) + Math.Pow(Math.Cos(Math.Pow(i, 3) - b), 2);
+                results.Add(result);
+            }
+            return results;
+        }
         
     }
 
